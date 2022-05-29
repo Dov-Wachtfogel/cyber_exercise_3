@@ -18,4 +18,4 @@ def dec(n, r=0):
     return dec(n, r + 1)
 
 
-print(factorial(5))
+
