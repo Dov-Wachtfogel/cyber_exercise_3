@@ -1,18 +1,18 @@
 def factorial(n):
     if n == 0:
         return 1
-    return add_mul(0, factorial(dec(n, 0)), n)
+    return mul(factorial(dec(n)), n)
 
 
-def add_mul(a, b, n):
+def mul(b, n, a=0):
     if n == 0:
         return a
     if b == 1:
-        return add_mul(a + 1, b, dec(n, 0))
-    return add_mul(add_mul(a, 1, b), b, dec(n, 0))
+        return mul(b, dec(n), a + 1)
+    return mul(b, dec(n), mul(1, b, a))
 
 
-def dec(n, r):
+def dec(n, r=0):
     if r + 1 == n:
         return r
     return dec(n, r + 1)
